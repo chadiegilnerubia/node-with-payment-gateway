@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import dotenv from "dotenv";
 import { Xendit } from "xendit-node";
 import { CreateInvoiceRequest, Invoice } from "xendit-node/invoice/models";
@@ -69,7 +69,7 @@ app.post("/receive_callback", async (req, res) => {
       `Invoice successfully paid with status ${body.status} and id ${body.id}`
     );
   }
-  res.sendStatus(200).end();
+  res.json({ status: "callback" });
 });
 
 app.listen(port, () => {
