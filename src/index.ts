@@ -64,7 +64,7 @@ const invoiceFunc = async () => {
 invoiceFunc();
 app.post("/receive_callback", async (req, res) => {
   const { body } = req;
-  if (body.data.status === "SUCCEEDED") {
+  if (body && body.data && body.data.status === "SUCCEEDED") {
     console.log(
       `Invoice successfully paid with status ${body.status} and id ${body.id}`
     );
