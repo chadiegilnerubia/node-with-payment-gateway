@@ -1,0 +1,22 @@
+{
+  "name": "xendit-payment-gateway-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "start": "tsc && node dist/index.js",
+    "test": "echo \"No tests currently configured\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5",
+    "xendit-node": "^5.0.0"
+  }
+}
