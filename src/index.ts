@@ -62,6 +62,16 @@ const invoiceFunc = async () => {
   console.log("response", response.invoiceUrl);
 };
 invoiceFunc();
+app.post("/receive_callback", async (req, res) => {
+  const { body } = req;
+  if (body.status === "PAID") {
+    console.log(
+      `Invoice successfully paid with status ${body.status} and id ${body.id}`
+    );
+  }
+  res.sendStatus(200).end();
+});
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
